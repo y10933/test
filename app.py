@@ -14,8 +14,8 @@ def handle_form():
     gender = request.form.get('gender')
     email = request.form.get('email')
 
-    # Validate ID number (assuming it's numeric)
-    if not re.match(r'^\d+$', id_number):
+    # Validate ID number (英文1個字母開頭，後面接著9個數字)
+    if not re.match(r'^\d+$', id_number): #只異動此行
         return "Invalid ID number", 400
 
     # Validate name (assuming it's alphabetic)
